@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internship Program - Allied Software Engineers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,67 +12,126 @@
     <nav class="navbar">
         <div class="nav-logo">
             <img src="images/logo.png" alt="ASE Logo">
-            <span>Allied Software Engineers</span>
+            <div>
+                <span class="brand-allied">Allied</span>
+                <span class="brand-software">Software</span>
+            </div>
         </div>
+        
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="internship.html" class="active">Internship</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="apply-btn">Apply Now</a></li>
         </ul>
     </nav>
 
     <main class="container">
-        <h2>Internship Program Details</h2>
         
-        <div class="grid-layout" style="margin-bottom: 3rem;">
+        <div class="text-center max-w-4xl" style="margin-bottom: 4rem;">
+            <h2>Internship Program</h2>
+            <p class="lead-text">Accelerate your career with structured tracks designed by industry professionals.</p>
+        </div>
+
+        <section style="margin-bottom: 5rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Available Domains</h2>
+            <div class="grid-layout">
+                <div class="card">
+                    <div class="card-icon icon-orange">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Master the MERN Stack, Next.js, Tailwind CSS and modern frontend architecture frameworks.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon icon-purple">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>DevOps Engineering</h3>
+                    <p>Master Git, Docker, Kubernetes, CI/CD pipelines, and robust cloud infrastructure automation.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon icon-rose">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>Build beautiful cross-platform mobile applications using Flutter and React Native architectures.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="grid-layout" style="margin-bottom: 5rem;">
             <div class="card">
+                <div class="card-icon icon-sky">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
                 <h3>Duration & Benefits</h3>
-                <p><strong>Duration:</strong> 3 Months / 6 Months</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Internship Duration:</strong> 3 Months / 6 Months</p>
                 <p><strong>Benefits:</strong> Mentorship, Certificate of Completion, Live Project Exposure, Job Placement Opportunity.</p>
             </div>
+            
             <div class="card">
+                <div class="card-icon icon-emerald">
+                    <i class="fas fa-user-check"></i>
+                </div>
                 <h3>Eligibility Criteria</h3>
-                <p>BSCS / BSSE / BSIT graduates or final semester students with a strong foundational grasp of programming concepts.</p>
+                <p>BSCS / BSSE / BSIT graduates or final semester students with a strong foundational grasp of programming concepts and modern logic building.</p>
             </div>
         </div>
 
-        <h2>Training Schedule</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Week</th>
-                    <th>Web Development Track</th>
-                    <th>DevOps Engineering Track</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Weeks 1-2</td>
-                    <td>Advanced UI Engineering (HTML5, CSS3, ES6 JavaScript)</td>
-                    <td>Version Control & Linux Environments (Git/GitHub)</td>
-                </tr>
-                <tr>
-                    <td>Weeks 3-6</td>
-                    <td>Backend Infrastructure Setup (Node.js & Express.js Servers)</td>
-                    <td>Containerization Architecture & Tooling (Docker)</td>
-                </tr>
-                <tr>
-                    <td>Weeks 7-10</td>
-                    <td>Database Architecture & Integration (MongoDB / Rest APIs)</td>
-                    <td>CI/CD Automations & Cloud Environments</td>
-                </tr>
-                <tr>
-                    <td>Weeks 11-12</td>
-                    <td>Capstone Project Review & Fine-Tuning</td>
-                    <td>Production Infrastructure Deployment Review</td>
-                </tr>
-            </tbody>
-        </table>
+        <section style="padding-top: 3rem; border-top: 1px solid var(--border-color);">
+            <h2>Training Schedule</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Web Development Track</th>
+                            <th>DevOps Engineering Track</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Weeks 1-2</td>
+                            <td>Advanced UI Engineering (HTML5, CSS3, ES6 JavaScript)</td>
+                            <td>Version Control & Linux Environments (Git/GitHub)</td>
+                        </tr>
+                        <tr>
+                            <td>Weeks 3-6</td>
+                            <td>Backend Infrastructure Setup (Node.js & Express.js Servers)</td>
+                            <td>Containerization Architecture & Tooling (Docker)</td>
+                        </tr>
+                        <tr>
+                            <td>Weeks 7-10</td>
+                            <td>Database Architecture & Integration (MongoDB / Rest APIs)</td>
+                            <td>CI/CD Automations & Cloud Environments</td>
+                        </tr>
+                        <tr>
+                            <td>Weeks 11-12</td>
+                            <td>Capstone Project Review & Fine-Tuning</td>
+                            <td>Production Infrastructure Deployment Review</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 Allied Software Engineers. Software Solutions that Work.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="ASE Logo">
+                <span class="text-white">Allied Software Engineers</span>
+            </div>
+            <div class="footer-info">
+                &copy; 2026 Allied Software Engineers. All Rights Reserved.<br>
+                <span class="copyright-span">Software Solutions that Work.</span>
+            </div>
+        </div>
     </footer>
 
 </body>

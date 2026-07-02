@@ -1,215 +1,494 @@
 /* Color Palette: Deep Blue & Cyan Accent */
 :root {
-    --primary-color: #0f172a;
-    --secondary-color: #0284c7;
-    --accent-color: #38bdf8;
-    --text-color: #334155;
-    --light-bg: #f8fafc;
+    --primary-color: #0f172a;        /* Dark Slate Blue */
+    --secondary-color: #0284c8;      /* Sky Blue / Apply Button */
+    --secondary-hover: #0369a1;      /* Darker Sky Blue for Hover */
+    --accent-color: #38bdf8;         /* Cyan Accent Line */
+    --text-main: #0f172a;            /* Zinc 900 */
+    --text-muted: #4b5563;           /* Zinc 600 */
+    --light-bg: #f4f4f5;             /* Zinc 100 for sections */
+    --body-bg: #fafafa;              /* Zinc 50 for body */
     --white: #ffffff;
+    --border-color: #e4e4e7;         /* Zinc 200 */
 }
 
+/* Base Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
-    background-color: var(--light-bg);
-    color: var(--text-color);
+    background-color: var(--body-bg);
+    color: var(--text-main);
     line-height: 1.6;
 }
 
-/* Navigation Bar */
+/* ==========================================
+   1. RESPONSIVE NAVIGATION BAR & HOVER EFFECTS
+   ========================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
-    padding: 1rem 2rem;
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(16px);
+    padding: 1.25rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-b: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: var(--white);
-    font-size: 1.4rem;
-    font-weight: bold;
+    gap: 12px;
 }
 
 .nav-logo img {
-    height: 40px;
+    height: 48px;
+    width: auto;
+}
+
+.nav-logo .brand-allied {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--white);
+    letter-spacing: -0.025em;
+}
+
+.nav-logo .brand-software {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    letter-spacing: -0.025em;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 2rem;
+    align-items: center;
 }
 
 .nav-links a {
     color: var(--white);
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.875rem;
+    position: relative;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover, 
+.nav-links a.active {
     color: var(--accent-color);
 }
 
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+/* Navigation Underline Animation Effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('../images/hero-bg.jpg') no-repeat center center/cover;
-    color: var(--white);
-    text-align: center;
-    padding: 5rem 1rem;
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: var(--accent-color);
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
+/* ==========================================
+   2. BUTTONS (Standard Rectangular Design)
+   ========================================== */
+.apply-btn {
     background-color: var(--secondary-color);
     color: var(--white);
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
+    padding: 10px 24px;
+    border-radius: 4px; /* Clean Horizontal Box */
+    font-weight: 600;
     text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
 }
 
-.btn:hover {
-    background-color: var(--accent-color);
+.apply-btn:hover {
+    background-color: var(--secondary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px rgba(2, 132, 200, 0.3);
 }
 
-/* Cards Section */
+/* General Layout Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.max-w-4xl {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Headings Base */
+h2 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+}
+
+p.lead-text {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* ==========================================
+   3. MODERN CARDS & HOVER EFFECTS
+   ========================================== */
 .grid-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    margin-bottom: 4rem;
 }
 
 .card {
     background: var(--white);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-top: 4px solid var(--secondary-color);
+    border-radius: 1.5rem; /* rounded-3xl match */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Tables */
+/* Card Icons Wrapper */
+.card-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.icon-orange { background-color: #ffedd5; color: #ea580c; }
+.icon-purple { background-color: #f3e8ff; color: #9333ea; }
+.icon-rose { background-color: #ffe4e6; color: #e11d48; }
+.icon-sky { background-color: #e0f2fe; color: #0284c8; }
+.icon-emerald { background-color: #d1fae5; color: #059669; }
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--text-muted);
+}
+
+.card p strong {
+    color: var(--text-main);
+}
+
+/* Lists styling */
+.services-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.services-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.services-list i {
+    color: var(--secondary-color);
+    margin-top: 4px;
+}
+
+/* Badges/Tags styling */
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.badge {
+    background-color: #e4e4e7;
+    color: #27272a;
+    padding: 0.375rem 0.875rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Split content grid divider line */
+.split-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ==========================================
+   4. TABLE STYLING
+   ========================================== */
+.table-container {
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 2rem 0;
-    background: var(--white);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: left;
 }
 
 th, td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 1.25rem;
 }
 
 th {
     background-color: var(--primary-color);
     color: var(--white);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-tr:hover {
-    background-color: #f1f5f9;
+td {
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Forms */
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f4f4f5; /* Subtle row hover */
+}
+
+tbody td:first-child {
+    font-weight: 600;
+    color: var(--text-main);
+    white-space: nowrap;
+}
+
+/* ==========================================
+   5. COMPACT REGISTER/CONTACT FORM STYLING
+   ========================================== */
+.form-wrapper {
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+.form-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
 .form-group {
-    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
     font-weight: 600;
+    color: #374151;
 }
 
 .form-control {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-main);
+    background-color: var(--white);
     outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: #a1a1aa;
 }
 
 .form-control:focus {
     border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px #e0f2fe;
 }
 
-.error-msg {
-    color: #ef4444;
-    font-size: 0.85rem;
-    margin-top: 0.25rem;
-    display: block;
+textarea.form-control {
+    resize: none;
 }
 
+.submit-btn {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.875rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-hover);
+}
+
+.submit-btn:active {
+    transform: scale(0.99);
+}
+
+/* Banner system alerts */
 .success-banner {
-    background-color: #dcfce7;
-    color: #15803d;
-    padding: 1rem;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+    padding: 0.875rem 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
     display: none;
 }
 
-/* Footer */
+/* ==========================================
+   6. FOOTER STYLE
+   ========================================== */
 footer {
     background-color: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 4rem;
+    color: #a1a1aa; /* Zinc 400 */
+    padding: 4rem 1.5rem;
+    margin-top: 5rem;
 }
 
-/* Responsive Breakpoint */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo img {
+    height: 40px;
+}
+
+.footer-logo .text-white {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.footer-info {
+    font-size: 0.875rem;
+    text-align: right;
+}
+
+.footer-info .copyright-span {
+    color: #71717a; /* Zinc 500 */
+}
+
+/* ==========================================
+   7. RESPONSIVE MEDIA QUERIES (BREAKPOINTS)
+   ========================================== */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        gap: 10px;
+        gap: 1.25rem;
+        padding: 1.25rem 1rem;
     }
+    
     .nav-links {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .apply-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container {
+        padding: 3rem 1rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .split-sections {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info {
+        text-align: center;
     }
 }
