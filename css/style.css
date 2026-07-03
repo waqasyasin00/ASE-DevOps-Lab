@@ -1,18 +1,17 @@
-/* Color Palette: Deep Blue & Cyan Accent */
+
 :root {
-    --primary-color: #0f172a;        /* Dark Slate Blue */
-    --secondary-color: #0284c8;      /* Sky Blue / Apply Button */
-    --secondary-hover: #0369a1;      /* Darker Sky Blue for Hover */
-    --accent-color: #38bdf8;         /* Cyan Accent Line */
-    --text-main: #0f172a;            /* Zinc 900 */
-    --text-muted: #4b5563;           /* Zinc 600 */
-    --light-bg: #f4f4f5;             /* Zinc 100 for sections */
-    --body-bg: #fafafa;              /* Zinc 50 for body */
+    --primary-color: #0f172a;        
+    --secondary-color: #0284c8;      
+    --secondary-hover: #0369a1;      
+    --accent-color: #38bdf8;         
+    --text-main: #0f172a;            
+    --text-muted: #4b5563;           
+    --light-bg: #f4f4f5;             
+    --body-bg: #fafafa;              
     --white: #ffffff;
-    --border-color: #e4e4e7;         /* Zinc 200 */
+    --border-color: #e4e4e7;         
 }
 
-/* Base Reset */
 * {
     margin: 0;
     padding: 0;
@@ -26,9 +25,7 @@ body {
     line-height: 1.6;
 }
 
-/* ==========================================
-   1. RESPONSIVE NAVIGATION BAR & HOVER EFFECTS
-   ========================================== */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -39,7 +36,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-b: 1px solid rgba(255, 255, 255, 0.1);
+    border-block: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-logo {
@@ -88,7 +85,6 @@ body {
     color: var(--accent-color);
 }
 
-/* Navigation Underline Animation Effect */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -105,9 +101,6 @@ body {
     width: 100%;
 }
 
-/* ==========================================
-   2. BUTTONS (Standard Rectangular Design)
-   ========================================== */
 .apply-btn {
     background-color: var(--secondary-color);
     color: var(--white);
@@ -128,7 +121,6 @@ body {
     box-shadow: 0 10px 15px rgba(2, 132, 200, 0.3);
 }
 
-/* General Layout Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -145,7 +137,6 @@ body {
     margin-right: auto;
 }
 
-/* Headings Base */
 h2 {
     font-size: 2.25rem;
     font-weight: 600;
@@ -158,10 +149,6 @@ p.lead-text {
     color: var(--text-muted);
     margin-bottom: 2rem;
 }
-
-/* ==========================================
-   3. MODERN CARDS & HOVER EFFECTS
-   ========================================== */
 .grid-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -173,7 +160,7 @@ p.lead-text {
 .card {
     background: var(--white);
     padding: 2rem;
-    border-radius: 1.5rem; /* rounded-3xl match */
+    border-radius: 1.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--border-color);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -184,7 +171,6 @@ p.lead-text {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Card Icons Wrapper */
 .card-icon {
     width: 3.5rem;
     height: 3.5rem;
@@ -216,7 +202,6 @@ p.lead-text {
     color: var(--text-main);
 }
 
-/* Lists styling */
 .services-list {
     list-style: none;
     margin-top: 1.5rem;
@@ -235,7 +220,6 @@ p.lead-text {
     margin-top: 4px;
 }
 
-/* Badges/Tags styling */
 .tech-badges {
     display: flex;
     flex-wrap: wrap;
@@ -252,7 +236,6 @@ p.lead-text {
     font-weight: 500;
 }
 
-/* Split content grid divider line */
 .split-sections {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -261,9 +244,6 @@ p.lead-text {
     border-top: 1px solid var(--border-color);
 }
 
-/* ==========================================
-   4. TABLE STYLING
-   ========================================== */
 .table-container {
     overflow-x: auto;
     background: var(--white);
@@ -306,7 +286,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background-color: #f4f4f5; /* Subtle row hover */
+    background-color: #f4f4f5; 
 }
 
 tbody td:first-child {
@@ -315,9 +295,7 @@ tbody td:first-child {
     white-space: nowrap;
 }
 
-/* ==========================================
-   5. COMPACT REGISTER/CONTACT FORM STYLING
-   ========================================== */
+
 .form-wrapper {
     max-width: 36rem;
     margin: 0 auto;
@@ -391,7 +369,6 @@ textarea.form-control {
     transform: scale(0.99);
 }
 
-/* Banner system alerts */
 .success-banner {
     background-color: #ecfdf5;
     border: 1px solid #a7f3d0;
@@ -404,10 +381,6 @@ textarea.form-control {
     font-weight: 500;
     display: none;
 }
-
-/* ==========================================
-   6. FOOTER STYLE
-   ========================================== */
 footer {
     background-color: var(--primary-color);
     color: #a1a1aa; /* Zinc 400 */
@@ -449,9 +422,6 @@ footer {
     color: #71717a; /* Zinc 500 */
 }
 
-/* ==========================================
-   7. RESPONSIVE MEDIA QUERIES (BREAKPOINTS)
-   ========================================== */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

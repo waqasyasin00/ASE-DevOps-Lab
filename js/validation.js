@@ -1,7 +1,6 @@
 document.getElementById('registrationForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Elements
     const fullName = document.getElementById('fullName').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
@@ -11,7 +10,6 @@ document.getElementById('registrationForm').addEventListener('submit', function(
 
     const successBanner = document.getElementById('successBanner');
 
-    // Error Spans
     document.getElementById('nameError').textContent = "";
     document.getElementById('emailError').textContent = "";
     document.getElementById('phoneError').textContent = "";
@@ -21,13 +19,11 @@ document.getElementById('registrationForm').addEventListener('submit', function(
 
     let isValid = true;
 
-    // Name Validation
     if (fullName === "") {
         document.getElementById('nameError').textContent = "Full name is required.";
         isValid = false;
     }
 
-    // Email Validation (Regex)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email === "") {
         document.getElementById('emailError').textContent = "Email address is required.";
@@ -37,7 +33,6 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         isValid = false;
     }
 
-    // Phone Validation (11 digits exact pattern check)
     const phoneRegex = /^\d{11}$/;
     if (phone === "") {
         document.getElementById('phoneError').textContent = "Phone number is required.";
@@ -47,19 +42,16 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         isValid = false;
     }
 
-    // Institute Validation
     if (institute === "") {
         document.getElementById('instituteError').textContent = "Institute field cannot be empty.";
         isValid = false;
     }
 
-    // Domain Selection Validation
     if (domain === "") {
         document.getElementById('domainError').textContent = "Please select a professional domain track.";
         isValid = false;
     }
 
-    // Message Length Validation (Min 20 chars)
     if (message === "") {
         document.getElementById('messageError').textContent = "Message field cannot be empty.";
         isValid = false;
@@ -68,7 +60,6 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         isValid = false;
     }
 
-    // If fully valid, display banner and reset form UI
     if (isValid) {
         successBanner.style.display = "block";
         document.getElementById('registrationForm').reset();
